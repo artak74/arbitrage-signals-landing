@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArbitrageSignals Pro - Live Crypto Arbitrage Detection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; margin-bottom: 30px; }
+        .cta-button { background: #28a745; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; }
+        .features { padding: 80px 0; background: #111; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: #222; padding: 30px; border-radius: 10px; }
+        .pricing { padding: 80px 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .pricing-card { background: #222; padding: 40px; border-radius: 10px; text-align: center; }
+        .price { font-size: 2.5rem; color: #28a745; margin: 20px 0; }
+        input[type="email"] { width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Live Crypto Arbitrage Detection</h1>
+            <p>Professional signals finding 2-27% profit opportunities across major exchanges</p>
+            <div>
+                <input type="email" id="email" placeholder="Enter your email for free trial">
+                <button class="cta-button" onclick="signUp()">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Real-Time Detection</h3>
+                    <p>Finds opportunities in <5 seconds vs 20+ minutes manual scanning</p>
+                </div>
+                <div class="feature-card">
+                    <h3>All Fees Included</h3>
+                    <p>Trading fees + network transfer fees = real profit calculations</p>
+                </div>
+                <div class="feature-card">
+                    <h3>5+ Major Exchanges</h3>
+                    <p>Binance, Gate.io, MEXC, HTX, CoinEX - comprehensive coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Signals</h3>
+                    <div class="price">$97<span style="font-size: 1rem;">/month</span></div>
+                    <ul>
+                        <li>90+ daily opportunities</li>
+                        <li>Email delivery 2x daily</li>
+                        <li>Basic profit calculations</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('basic')">Start Trial</button>
+                </div>
+                <div class="pricing-card" style="border: 2px solid #28a745;">
+                    <h3>Validated Signals</h3>
+                    <div class="price">$297<span style="font-size: 1rem;">/month</span></div>
+                    <ul>
+                        <li>12+ execution-ready opportunities</li>
+                        <li>Real-time validation</li>
+                        <li>API access</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('validated')">Start Trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function signUp() {
+            const email = document.getElementById('email').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            localStorage.setItem('signupEmail', email);
+            localStorage.setItem('signupDate', new Date().toISOString());
+            alert(`Thank you! We'll send your free trial access to ${email} within 24 hours.`);
+            document.getElementById('email').value = '';
+        }
+
+        function selectPlan(plan) {
+            localStorage.setItem('selectedPlan', plan);
+            alert(`Great choice! Your ${plan} plan trial will begin within 24 hours.`);
+        }
+    </script>
+</body>
+</html>
